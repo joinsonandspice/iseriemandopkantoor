@@ -1,9 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 
 // import AmpPayoff from "./amp-payoff.svg";
 // import AmpPayoffDark from "./amp-payoff-dark.svg";
 import AmpPayoffWhite from "./amp-payoff-white.svg";
-
 
 
 // Return the next working day in Dutch
@@ -82,7 +83,6 @@ export default function Home() {
   // Check if before 17:30
   const beforeLeave = new Date().getHours() < 17 || new Date().getHours() === 17 && new Date().getMinutes() < 30;
   const opKantoor = new Date().getHours() >= 9 && beforeLeave;
-
 
   return (<main>
       <nav id="header" className="fixed w-full z-30 top-0 text-white bg-black/80">
