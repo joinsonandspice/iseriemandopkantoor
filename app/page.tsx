@@ -88,12 +88,13 @@ export default function Home() {
       <nav id="header" className="fixed w-full z-30 top-0 text-white bg-black/80">
         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
           <div className="pl-4 flex items-center">
-            <a className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+            <span className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl">
               <Image
+                alt=""
                 src={AmpPayoffWhite}
                 width={200}
               ></Image>
-            </a>  
+            </span>  
           </div>
           <div className="block lg:hidden pr-4">
             <button id="nav-toggle" className="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
