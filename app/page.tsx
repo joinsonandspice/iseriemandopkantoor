@@ -37,7 +37,7 @@ const VolgendeWerkdag = () => {
 const NeeNatuurlijk = () => {
 
   return <div className="pt-0 bg-[url('/boot.jpg')] bg-cover bg-center">
-    <div className={`container px-3 min-h-screen mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-start`}>
+    <div className={`container px-3 min-h-screen mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-start text-black`}>
       <div className="flex flex-col bg-slate-50  rounded-lg  w-full md:w-2/5 justify-center justify-content-center items-start text-center text-left p-5">
         <p className="uppercase tracking-loose w-full text-xl font-light mt-2 mb-3">
           Is er nog iemand op kantoor?
@@ -70,7 +70,7 @@ const NeeNatuurlijk = () => {
 const JaToch = () => {
 
   return <div className="pt-0 bg-[url('/come_in.jpg')] bg-cover bg-center">
-    <div className={`container px-3 min-h-screen mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-start`}>
+    <div className={`container px-3 min-h-screen mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-start text-black`}>
       <div className="w-full md:w-3/5 py-6 text-center">
       </div>
       <div className="flex flex-col bg-slate-50  rounded-lg  w-full md:w-2/5 justify-center justify-content-center items-start text-center p-5">
