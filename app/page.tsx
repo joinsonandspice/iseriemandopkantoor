@@ -67,7 +67,7 @@ const JaToch = () => {
         <p className="leading-normal text fw-light mb-8">
           * Wij hebben een geavanceerd model getraind om dit te zeggen tussen 09:00 en 17:30.<br />
           <br />
-          Kom je even kijken? Het kan zijn dat we tussendoor toch net even een luchtje aan het scheppen zijn - of de hele dag remote werken. Voor de zekerheid neem je het best even contact op.
+          Kom je even kijken? Het kan zijn dat we tussendoor toch net even een luchtje aan het scheppen zijn - of de hele dag remote werken. Voor de zekerheid neem je het beste even contact op.
         </p>
       </div>
     </div>
