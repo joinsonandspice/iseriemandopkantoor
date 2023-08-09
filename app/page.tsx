@@ -82,7 +82,12 @@ export default function Home() {
 
   // Check if before 17:30
   const beforeLeave = new Date().getHours() < 17 || new Date().getHours() === 17 && new Date().getMinutes() < 30;
-  const opKantoor = new Date().getHours() >= 9 && beforeLeave;
+  let opKantoor = new Date().getHours() >= 9 && beforeLeave;
+
+  // If not a working day, set to false
+  if (new Date().getDay() === 0 || new Date().getDay() === 6) {
+    opKantoor = false;
+  }
 
   return (<main>
       <nav id="header" className="fixed w-full z-30 top-0 text-white bg-black/80">
