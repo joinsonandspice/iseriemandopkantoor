@@ -2,43 +2,51 @@
 
 import Image from 'next/image';
 
-// import AmpPayoff from "./amp-payoff.svg";
-// import AmpPayoffDark from "./amp-payoff-dark.svg";
 import AmpPayoffWhite from "./amp-payoff-white.svg";
 
 
-// Return the next working day in Dutch
+/**
+ * @returns {string} The next working day in Dutch (morgen, maandag, dinsdag, etc.)
+ */
 const VolgendeWerkdag = () => {
-  const today = new Date();
-  const nextWorkingDay = new Date(today);
 
+  // placeholder date object
+  const nextWorkingDay = new Date();
+
+  // Is tomorrow a working day?
   let isTomorrow = true;
 
+  // Shift to next day
   nextWorkingDay.setDate(nextWorkingDay.getDate() + 1);
 
+  // If it's a Sunday, shift to Monday
   if (nextWorkingDay.getDay() === 0) {
     isTomorrow = false;
     nextWorkingDay.setDate(nextWorkingDay.getDate() + 1);
   }
 
+  // If it's a Saturday, shift to Monday
   if (nextWorkingDay.getDay() === 6) {
     isTomorrow = false;
     nextWorkingDay.setDate(nextWorkingDay.getDate() + 2);
   }
 
-  if (isTomorrow) {
-    return "morgen";
-  }
+  // If tomorrow is a regular working day, return relative "morgen"  
+  if (isTomorrow) return "morgen";
 
+  // Otherwise, return the day name
   return nextWorkingDay.toLocaleDateString('nl-NL', { weekday: 'long' });
 }
 
 
+/**
+ * Render content for when we're not in the office
+ */
 const NeeNatuurlijk = () => {
 
   return <div className="pt-0 bg-[url('/boot.jpg')] bg-cover bg-center">
     <div className={`container px-3 min-h-screen mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-start text-black`}>
-      <div className="flex flex-col bg-slate-50  rounded-lg  w-full md:w-2/5 justify-center justify-content-center items-start text-center text-left p-5">
+      <div className="flex flex-col bg-slate-50 rounded-lg w-full md:w-2/5 justify-center justify-content-center items-start text-center text-left p-5">
         <p className="uppercase tracking-loose w-full text-xl font-light mt-2 mb-3">
           Is er nog iemand op kantoor?
         </p>
@@ -67,13 +75,16 @@ const NeeNatuurlijk = () => {
 }
 
 
+/**
+ * Render content for when we are in the office
+ */
 const JaToch = () => {
 
   return <div className="pt-0 bg-[url('/come_in.jpg')] bg-cover bg-center">
     <div className={`container px-3 min-h-screen mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-start text-black`}>
       <div className="w-full md:w-3/5 py-6 text-center">
       </div>
-      <div className="flex flex-col bg-slate-50  rounded-lg  w-full md:w-2/5 justify-center justify-content-center items-start text-center p-5">
+      <div className="flex flex-col bg-slate-50 rounded-lg w-full md:w-2/5 justify-center justify-content-center items-start text-center p-5">
         <p className="uppercase tracking-loose w-full text-xl font-light mt-2 mb-3">
           Is er nog iemand op kantoor?
         </p>
@@ -182,7 +193,7 @@ export default function Home() {
           </g>
         </svg> */}
     </div>
-    <section className="bg-white  py-8">
+    <section className="bg-white py-8">
       <div className="container max-w-5xl mx-auto m-8">
         <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           Hoezo is hier een website voor?
