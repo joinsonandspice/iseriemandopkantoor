@@ -41,7 +41,7 @@ const VolgendeWerkdag = () => {
 
 const Header = ({ backgroundImage, title, children, reverse }: { backgroundImage: string, title: string, children: React.ReactNode, reverse?: boolean }) => (
   <div className="pt-0 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
-    <div className={`container px-3 min-h-screen mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-start text-black`}>
+    <div className={`container max-w-7xl mx-auto px-3 min-h-screen mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-start text-black`}>
       {!reverse ? <div className="w-full md:w-3/5 py-6 text-center" /> : null}
       <div className="flex flex-col bg-slate-50 rounded-lg w-full md:w-2/5 justify-center justify-content-center items-start text-center p-5">
         <p className="uppercase tracking-loose w-full text-xl font-light mt-2 mb-3">
@@ -128,8 +128,8 @@ export default function Home() {
   }
 
   return (<main>
-    <nav id="header" className="fixed w-full z-30 top-0 text-white bg-black/80">
-      <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+    <nav id="header" className="fixed w-full z-30 top-0 text-white bg-black/80 ">
+      <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2 max-w-7xl mx-auto">
         <div className="pl-4 flex items-center">
           <span className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl">
             <Image
