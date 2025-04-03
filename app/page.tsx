@@ -171,7 +171,7 @@ export default function Home() {
       </div>
     </section>
     <div className='w-full text-center text-gray-600 font-light py-4'>
-      Gemaakt met een knipoog door <a href="https://joinsonandspice.nl?utm_source=iseriemandopkantoor&utm_medium=website&utm_campaign=iseriemandopkantoor" >JOINSON&SPICE</a> - het auditkantoor voor leidende tech-bedrijven.
+      Gemaakt met een knipoog door <a href="https://joinsonandspice.nl?utm_source=iseriemandopkantoor&utm_medium=website&utm_campaign=iseriemandopkantoor" >JOINSON&SPICE</a> - de accountants voor leidende tech-bedrijven in Nederland.
     </div>
   </main>
   )
