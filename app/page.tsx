@@ -39,7 +39,7 @@ const VolgendeWerkdag = () => {
 }
 
 
-const Header = ({ backgroundImage, title, children, reverse }: { backgroundImage: string, title: string, children: React.ReactNode, reverse?: boolean }) => (
+const Header = ({ backgroundImage, title, children, reverse }: { backgroundImage: string, title: React.ReactNode, children: React.ReactNode, reverse?: boolean }) => (
   <div className="pt-0 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
     <div className={`container max-w-7xl mx-auto px-3 min-h-screen mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center md:justify-start text-black`}>
       {!reverse ? <div className="w-full md:w-3/5 py-6 text-center" /> : null}
@@ -78,7 +78,7 @@ const NeeNatuurlijk = () => (
       <a
         id="navAction"
         href="https://joinsonandspice.nl/werkenbij?utm_source=iseriemandopkantoor&utm_medium=website&utm_campaign=iseriemandopkantoor"
-        className="mx-auto lg:mx-0 bg-emerald-350 text-gray-100 font-bold rounded-full mt-4 mb-4 lg:mt-0 py-3 px-8 shadow focus:outline-none bg-emerald-300 focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+        className="mx-auto lg:mx-0 bg-teal-500 text-gray-100 font-bold rounded-full mt-4 mb-4 lg:mt-0 py-3 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
       >
         Dat wil ik ook &rarr;
       </a>
@@ -93,7 +93,7 @@ const NeeNatuurlijk = () => (
 const JaToch = () => (
   <Header
     backgroundImage='/come_in.jpg'
-    title="Ja!* Kom je ook?"
+    title={<>Ja!<sup>*</sup> Kom je ook?</>}
   >
     <p className="leading-normal text fw-light mb-8">
       * Wij hebben een giga geavanceerd model getraind om dit te zeggen op werkdagen tussen 09:00 en 17:30.<br />
@@ -105,7 +105,7 @@ const JaToch = () => (
       <a
         id="contact"
         href="https://joinsonandspice.nl/contact?utm_source=iseriemandopkantoor&utm_medium=website&utm_campaign=iseriemandopkantoor"
-        className="mx-auto lg:mx-0 bg-emerald-350 text-gray-100 font-bold rounded-full mt-4 mb-4 lg:mt-0 py-3 px-8 shadow focus:outline-none bg-emerald-300 focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+        className="mx-auto lg:mx-0 bg-teal-500 text-gray-100 font-bold rounded-full mt-4 mb-4 lg:mt-0 py-3 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
       >
         Ik kom langs &rarr;
       </a>
@@ -142,7 +142,7 @@ export default function Home() {
         <a
           id="aboutus"
           href="https://joinsonandspice.nl/over?utm_source=iseriemandopkantoor&utm_medium=website&utm_campaign=iseriemandopkantoor"
-          className="mx-auto my-auto lg:mx-0 hover:underline border border-white hover:border-emerald-350 hover:bg-emerald-350 text-white font-bold rounded-full me-3 py-3 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+          className="mx-auto my-auto lg:mx-0 hover:underline border border-white hover:border hover:bg-teal-600 text-white font-bold rounded-full me-3 py-3 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
         >
           Over ons
         </a>
