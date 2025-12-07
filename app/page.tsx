@@ -64,17 +64,16 @@ const Header = ({ backgroundImage, title, children, reverse }: { backgroundImage
 /**
  * Render content for when we're not in the office
  */
-const NeeNatuurlijk = () => (
+const NeeNatuurlijk = ({ weekend }: { weekend: boolean }) => (
   <Header
     backgroundImage='/boot.jpg'
-    title="Nee joh, wij zijn lekker naar huis!"
+    title={weekend ? "Nee joh, wij vieren weekend!" : "Nee joh, wij zijn lekker naar huis!"}
     reverse
   >
     <p className="leading-normal text-2xl mb-8">
-      Geniet van je avond. Zien we je <VolgendeWerkdag /> weer?
+      Geniet van je {weekend ? "weekend" : "avond"}. Zien we je <VolgendeWerkdag /> weer?
     </p>
     <div className='flex justify-center w-full'>
-
       <a
         id="navAction"
         href="https://joinsonandspice.nl/werkenbij?utm_source=iseriemandopkantoor&utm_medium=website&utm_campaign=iseriemandopkantoor"
@@ -120,12 +119,8 @@ export default function Home() {
 
   // Check if before 17:30
   const beforeLeave = curDate.getHours() < 17 || curDate.getHours() === 17 && curDate.getMinutes() < 30;
-  let opKantoor = curDate.getHours() >= 9 && beforeLeave;
-
-  // If not a working day, set to false
-  if (curDate.getDay() === 0 || curDate.getDay() === 6) {
-    opKantoor = false;
-  }
+  const weekend = curDate.getDay() === 0 || curDate.getDay() === 6;
+  let opKantoor = curDate.getHours() >= 9 && beforeLeave && !weekend;
 
   return (<main>
     <nav id="header" className="fixed w-full z-30 top-0 text-white bg-black/80 ">
@@ -149,7 +144,7 @@ export default function Home() {
       </div>
     </nav>
 
-    {opKantoor ? <JaToch /> : <NeeNatuurlijk />}
+    {opKantoor ? <JaToch /> : <NeeNatuurlijk weekend={weekend} />}
 
     <section className="bg-white py-8">
       <div className="container max-w-5xl mx-auto m-8">
